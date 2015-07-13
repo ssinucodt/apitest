@@ -7,6 +7,7 @@
     <property name="phpcpddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/> 
     <property name="phpunitdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
+    <property name="extensionexe" value=".bat"/>
     -->
     
     <property name="phplocdir" value="/usr/local/bin"/>
@@ -14,8 +15,9 @@
     <property name="phpcsdir" value="/usr/local/bin"/>
     <property name="phpcpddir" value="/usr/local/bin"/> 
     <property name="phpunitdir" value="/usr/local/bin"/>
-    <property name="phpdocdir" value="/usr/local/bin"/>
-        
+    <property name="phpdocdir" value="/usr/local/bin"/>    
+    <property name="extensionexe" value=""/>
+    
     <target name="build"
             depends="prepare,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdoc"
             description=""/>
@@ -53,7 +55,7 @@
     
     <!-- Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment. -->
     <target name="phploc-ci" unless="phploc.done" depends="prepare" description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
-        <exec executable="${phplocdir}/phploc.bat" taskname="phploc">
+        <exec executable="${phplocdir}/phploc${extensionexe}" taskname="phploc">
             <arg value="--count-tests"/>
             <arg value="--log-csv"/>
             <arg path="${basedir}/build/phploc/report.csv"/>
@@ -70,7 +72,7 @@
             unless="phpmd.done"
             depends="prepare"
             description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
-       <exec executable="${phpmddir}/phpmd.bat" taskname="phpmd">
+       <exec executable="${phpmddir}/phpmd${extensionexe}" taskname="phpmd">
            <!-- Analizar el directorio app/ -->
            <arg value="${basedir}/app" />
            <!-- Reporte en formato XML -->
@@ -87,7 +89,7 @@
 
     <!-- Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment. -->
     <target name="phpcs-ci" unless="phpcs.done" depends="prepare" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
-       <exec executable="${phpcsdir}/phpcs.bat" taskname="phpcs">
+       <exec executable="${phpcsdir}/phpcs${extensionexe}" taskname="phpcs">
            <!-- Ignorar warnings -->
            <arg value="-n"/>
            <!-- Estandar PSR2 -->
@@ -112,7 +114,7 @@
     
     <!-- Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment. -->
     <target name="phpcpd-ci" unless="phpcpd.done" depends="prepare" description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
-        <exec executable="${phpcpddir}/phpcpd.bat" taskname="phpcpd">
+        <exec executable="${phpcpddir}/phpcpd${extensionexe}" taskname="phpcpd">
             <arg value="--log-pmd"/>
             <arg path="${basedir}/build/phpcpd/report.xml"/>
             <arg path="${basedir}/app"/>
@@ -122,7 +124,7 @@
     
     <!-- Run unit tests with PHPUnit -->
     <target name="phpunit" unless="phpunit.done" depends="prepare" description="Run unit tests with PHPUnit">
-        <exec executable="${phpunitdir}/phpunit.bat" failonerror="true" taskname="phpunit">
+        <exec executable="${phpunitdir}/phpunit${extensionexe}" failonerror="true" taskname="phpunit">
             <!-- Archivo de configuracion en build/phpunit/phpunit.xml -->
             <arg value="--configuration"/>
             <arg path="${basedir}/build/phpunit/phpunit.xml"/>
@@ -132,7 +134,7 @@
     
     <!-- Generate project documentation using phpDoc -->
     <target name="phpdoc" unless="phpdoc.done" depends="prepare" description="Generate project documentation using phpDoc">
-        <exec executable="${phpdocdir}/phpdoc.bat" dir="${basedir}/build" taskname="phpdox">
+        <exec executable="${phpdocdir}/phpdoc${extensionexe}" dir="${basedir}/build" taskname="phpdox">
             <arg value="--config"/>
             <arg path="${basedir}/build/phpdoc/phpdoc.xml"/>
         </exec>
