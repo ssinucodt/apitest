@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "testmobile"
+    },
+    "paths": {
+        "/positions": {
+            "get": {
+                "description": "Lista, orderna y pagina las posiciones segun las opciones especificadas.",
+                "operationId": "index",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "example": {
+                                "text/plain; charset=utf-8": "sdadfsdasfsdfsf"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "X-Session-Token",
+                        "in": "header",
+                        "description": "Token de acceso",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-imei",
+                        "in": "header",
+                        "description": "IMEI de dispositivo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-OS",
+                        "in": "header",
+                        "description": "IMEI de dispositivo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "description": "JSON con filtros",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "soft",
+                        "in": "query",
+                        "description": "JSON con ordenamiento",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Pagina actual",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Numero de resultados por pagina",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ]
+            }
+        }
+    }
+}

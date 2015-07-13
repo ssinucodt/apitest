@@ -1,0 +1,107 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "testmobile"
+    },
+    "paths": {
+        "/positions": {
+            "get": {
+                "operationId": "index",
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Lista, orderna y pagina las posiciones segun las opciones especificadas.",
+                "parameters": [
+                    {
+                        "name": "X-Session-Token",
+                        "in": "header",
+                        "description": "Token de acceso",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-imei",
+                        "in": "header",
+                        "description": "IMEI de dispositivo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "X-OS",
+                        "in": "header",
+                        "description": "IMEI de dispositivo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "filters",
+                        "in": "query",
+                        "description": "JSON con filtros",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "soft",
+                        "in": "query",
+                        "description": "JSON con ordenamiento",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Pagina actual",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Numero de resultados por pagina",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string",
+                            "example": {
+                                "application/json": {
+                                    "error": false,
+                                    "msg": "OK",
+                                    "data": {
+                                        "total": 10,
+                                        "per_page": 2,
+                                        "current_page": 1,
+                                        "last_page": 5,
+                                        "from": 1,
+                                        "to": 2,
+                                        "data": [
+                                            {
+                                                "id_position": 2,
+                                                "id_user": 1,
+                                                "latitude": "4.712",
+                                                "longitude": "-74.454",
+                                                "updatetime": "2015-07-07 16:35:00"
+                                            },
+                                            {
+                                                "id_position": 1,
+                                                "id_user": 1,
+                                                "latitude": "4.712",
+                                                "longitude": "-74.454",
+                                                "updatetime": "2015-07-07 16:35:00"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

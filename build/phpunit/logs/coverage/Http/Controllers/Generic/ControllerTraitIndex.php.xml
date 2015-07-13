@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ControllerTraitIndex.php">
+    <totals>
+      <lines total="661" comments="215" code="446" executable="299" executed="0" percent="0.00%"/>
+      <methods count="3" tested="0" percent="0.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="0" tested="0" percent=""/>
+      <traits count="1" tested="0" percent="0.00%"/>
+    </totals>
+    <trait name="ControllerTraitIndex" start="24" executable="299" executed="0" crap="9120">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="App\Http\Controllers\Generic"/>
+      <method name="index" signature="index()" start="30" end="96" crap="110" executable="43" executed="0" coverage="0"/>
+      <method name="privateIndex" signature="privateIndex($limit=null, $sort=null, $filters=null, $withs=null, $resp=null)" start="108" end="661" crap="6972" executable="192" executed="0" coverage="0"/>
+      <method name="anonymous function" signature="anonymous function ($qy) use($fil)" start="527" end="534" crap="6" executable="4" executed="0" coverage="0"/>
+    </trait>
+  </file>
+</phpunit>

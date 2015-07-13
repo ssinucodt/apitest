@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="RedirectIfAuthenticated.php">
+    <totals>
+      <lines total="43" comments="18" code="25" executable="9" executed="0" percent="0.00%"/>
+      <methods count="2" tested="0" percent="0.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="0" percent="0.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="RedirectIfAuthenticated" start="8" executable="9" executed="0" crap="12">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="App\Http\Middleware"/>
+      <method name="__construct" signature="__construct(Guard $auth)" start="23" end="26" crap="2" executable="3" executed="0" coverage="0"/>
+      <method name="handle" signature="handle($request, Closure $next)" start="35" end="42" crap="6" executable="6" executed="0" coverage="0"/>
+    </class>
+  </file>
+</phpunit>

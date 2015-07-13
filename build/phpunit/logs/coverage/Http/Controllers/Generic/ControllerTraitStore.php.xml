@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ControllerTraitStore.php">
+    <totals>
+      <lines total="41" comments="0" code="41" executable="14" executed="0" percent="0.00%"/>
+      <methods count="1" tested="0" percent="0.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="0" tested="0" percent=""/>
+      <traits count="1" tested="0" percent="0.00%"/>
+    </totals>
+    <trait name="ControllerTraitStore" start="23" executable="14" executed="0" crap="6">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="generic"/>
+      <method name="store" signature="store()" start="25" end="41" crap="6" executable="14" executed="0" coverage="0"/>
+    </trait>
+  </file>
+</phpunit>

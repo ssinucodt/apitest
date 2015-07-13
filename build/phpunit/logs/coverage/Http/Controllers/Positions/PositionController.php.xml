@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="PositionController.php">
+    <totals>
+      <lines total="265" comments="103" code="162" executable="105" executed="87" percent="82.86%"/>
+      <methods count="2" tested="0" percent="0.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="1" tested="0" percent="0.00%"/>
+      <traits count="0" tested="0" percent=""/>
+    </totals>
+    <class name="PositionController" start="20" executable="105" executed="87" crap="26.90">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="App\Http\Controllers\Positions"/>
+      <method name="index" signature="index(Request $request)" start="88" end="190" crap="18.05" executable="75" executed="60" coverage="80"/>
+      <method name="store" signature="store(Request $request)" start="221" end="265" crap="8.06" executable="30" executed="27" coverage="90"/>
+    </class>
+    <coverage>
+      <line nr="90">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="91">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="92">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="93">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="94">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="96">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="97">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="98">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="100">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="101">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="102">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="104">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="105">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="106">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="108">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="109">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="110">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="111">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="112">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="113">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="116">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="119">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="122">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="125">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="126">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="127">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="128">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="129">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="130">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="136">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="137">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="138">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="139">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="141">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="142">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="143">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="144">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="145">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="146">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="148">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="149">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="150">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="152">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="153">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="154">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="155">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="160">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="162">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="163">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="164">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="165">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="171">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="172">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="173">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="174">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="175">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="176">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="177">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="183">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="189">
+        <covered by="PositionsTest::testGetPositions"/>
+      </line>
+      <line nr="223">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="224">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="225">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="226">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="227">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="229">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="231">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="232">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="233">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="235">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="236">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="237">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="239">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="240">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="241">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="242">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="243">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="244">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="245">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="247">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="248">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="249">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="250">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="251">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="252">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="258">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+      <line nr="264">
+        <covered by="PositionsTest::testPostPositions"/>
+      </line>
+    </coverage>
+  </file>
+</phpunit>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ControllerTraitVerify.php">
+    <totals>
+      <lines total="35" comments="8" code="27" executable="23" executed="0" percent="0.00%"/>
+      <methods count="1" tested="0" percent="0.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="0" tested="0" percent=""/>
+      <traits count="1" tested="0" percent="0.00%"/>
+    </totals>
+    <trait name="ControllerTraitVerify" start="6" executable="23" executed="0" crap="30">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="generic"/>
+      <method name="verifyModel" signature="verifyModel()" start="7" end="34" crap="30" executable="23" executed="0" coverage="0"/>
+    </trait>
+  </file>
+</phpunit>

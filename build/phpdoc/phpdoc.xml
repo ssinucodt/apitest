@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title>testmobile</title>
+    <parser>
+        <target>parser</target>
+    </parser>
+    <transformer>
+        <target>../../docs/phpdoc</target>
+    </transformer>
+    <files>
+        <directory>../../app</directory>
+    </files>
+</phpdoc>

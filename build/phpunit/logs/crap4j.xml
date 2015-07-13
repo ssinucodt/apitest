@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<crap_result>
+  <project/>
+  <timestamp>2015-07-11 01:34:07</timestamp>
+  <stats>
+    <name>Method Crap Stats</name>
+    <methodCount>31</methodCount>
+    <crapMethodCount>9</crapMethodCount>
+    <crapLoad>208</crapLoad>
+    <totalCrap>9654.12</totalCrap>
+    <crapMethodPercent>29.03</crapMethodPercent>
+  </stats>
+  <methods>
+    <method>
+      <package>App\Console\Commands</package>
+      <className>Inspire</className>
+      <methodName>handle</methodName>
+      <methodSignature>handle()</methodSignature>
+      <fullMethod>handle()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Console</package>
+      <className>Kernel</className>
+      <methodName>schedule</methodName>
+      <methodSignature>schedule(Schedule $schedule)</methodSignature>
+      <fullMethod>schedule(Schedule $schedule)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Exceptions</package>
+      <className>Handler</className>
+      <methodName>report</methodName>
+      <methodSignature>report(Exception $e)</methodSignature>
+      <fullMethod>report(Exception $e)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Exceptions</package>
+      <className>Handler</className>
+      <methodName>render</methodName>
+      <methodSignature>render($request, Exception $e)</methodSignature>
+      <fullMethod>render($request, Exception $e)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitCreateMovil</className>
+      <methodName>storeMovil</methodName>
+      <methodSignature>storeMovil($obj)</methodSignature>
+      <fullMethod>storeMovil($obj)</fullMethod>
+      <crap>110</crap>
+      <complexity>10</complexity>
+      <coverage>0</coverage>
+      <crapLoad>10</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitDestroy</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy()</methodSignature>
+      <fullMethod>destroy()</fullMethod>
+      <crap>90</crap>
+      <complexity>9</complexity>
+      <coverage>0</coverage>
+      <crapLoad>9</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitDestroy</className>
+      <methodName>privateDestroy</methodName>
+      <methodSignature>privateDestroy(Array $aborrar)</methodSignature>
+      <fullMethod>privateDestroy(Array $aborrar)</fullMethod>
+      <crap>210</crap>
+      <complexity>14</complexity>
+      <coverage>0</coverage>
+      <crapLoad>14</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Generic</package>
+      <className>ControllerTraitIndex</className>
+      <methodName>index</methodName>
+      <methodSignature>index()</methodSignature>
+      <fullMethod>index()</fullMethod>
+      <crap>110</crap>
+      <complexity>10</complexity>
+      <coverage>0</coverage>
+      <crapLoad>10</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Generic</package>
+      <className>ControllerTraitIndex</className>
+      <methodName>privateIndex</methodName>
+      <methodSignature>privateIndex($limit=null, $sort=null, $filters=null, $withs=null, $resp=null)</methodSignature>
+      <fullMethod>privateIndex($limit=null, $sort=null, $filters=null, $withs=null, $resp=null)</fullMethod>
+      <crap>6972</crap>
+      <complexity>83</complexity>
+      <coverage>0</coverage>
+      <crapLoad>86</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Generic</package>
+      <className>ControllerTraitIndex</className>
+      <methodName>anonymous function</methodName>
+      <methodSignature>anonymous function ($qy) use($fil)</methodSignature>
+      <fullMethod>anonymous function ($qy) use($fil)</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitStore</className>
+      <methodName>store</methodName>
+      <methodSignature>store()</methodSignature>
+      <fullMethod>store()</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitStoreElement</className>
+      <methodName>storeElement</methodName>
+      <methodSignature>storeElement($json_object)</methodSignature>
+      <fullMethod>storeElement($json_object)</fullMethod>
+      <crap>1406</crap>
+      <complexity>37</complexity>
+      <coverage>0</coverage>
+      <crapLoad>38</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitUpdate</className>
+      <methodName>update</methodName>
+      <methodSignature>update()</methodSignature>
+      <fullMethod>update()</fullMethod>
+      <crap>506</crap>
+      <complexity>22</complexity>
+      <coverage>0</coverage>
+      <crapLoad>23</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitUpdate</className>
+      <methodName>privateUpdate</methodName>
+      <methodSignature>privateUpdate(Array $ref, $basicinf = null, $relaciones = null, $ismasive = false, &#13;
+		$idUserSession)</methodSignature>
+      <fullMethod>privateUpdate(Array $ref, $basicinf = null, $relaciones = null, $ismasive = false, &#13;
+		$idUserSession)</fullMethod>
+      <crap>132</crap>
+      <complexity>11</complexity>
+      <coverage>0</coverage>
+      <crapLoad>11</crapLoad>
+    </method>
+    <method>
+      <package>generic</package>
+      <className>ControllerTraitVerify</className>
+      <methodName>verifyModel</methodName>
+      <methodSignature>verifyModel()</methodSignature>
+      <fullMethod>verifyModel()</fullMethod>
+      <crap>30</crap>
+      <complexity>5</complexity>
+      <coverage>0</coverage>
+      <crapLoad>5</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Positions</package>
+      <className>PositionController</className>
+      <methodName>index</methodName>
+      <methodSignature>index(Request $request)</methodSignature>
+      <fullMethod>index(Request $request)</fullMethod>
+      <crap>18.05</crap>
+      <complexity>16</complexity>
+      <coverage>80</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Positions</package>
+      <className>PositionController</className>
+      <methodName>store</methodName>
+      <methodSignature>store(Request $request)</methodSignature>
+      <fullMethod>store(Request $request)</fullMethod>
+      <crap>8.06</crap>
+      <complexity>8</complexity>
+      <coverage>90</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>LoginController</className>
+      <methodName>login</methodName>
+      <methodSignature>login(Request $request)</methodSignature>
+      <fullMethod>login(Request $request)</fullMethod>
+      <crap>4.01</crap>
+      <complexity>4</complexity>
+      <coverage>90.91</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>LoginController</className>
+      <methodName>generateToken</methodName>
+      <methodSignature>generateToken($length = 48)</methodSignature>
+      <fullMethod>generateToken($length = 48)</fullMethod>
+      <crap>2</crap>
+      <complexity>2</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>index</methodName>
+      <methodSignature>index()</methodSignature>
+      <fullMethod>index()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>Authenticate</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(Guard $auth)</methodSignature>
+      <fullMethod>__construct(Guard $auth)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>Authenticate</className>
+      <methodName>handle</methodName>
+      <methodSignature>handle($request, Closure $next)</methodSignature>
+      <fullMethod>handle($request, Closure $next)</fullMethod>
+      <crap>12</crap>
+      <complexity>3</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>RedirectIfAuthenticated</className>
+      <methodName>__construct</methodName>
+      <methodSignature>__construct(Guard $auth)</methodSignature>
+      <fullMethod>__construct(Guard $auth)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Middleware</package>
+      <className>RedirectIfAuthenticated</className>
+      <methodName>handle</methodName>
+      <methodSignature>handle($request, Closure $next)</methodSignature>
+      <fullMethod>handle($request, Closure $next)</fullMethod>
+      <crap>6</crap>
+      <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>AppServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot()</methodSignature>
+      <fullMethod>boot()</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>AppServiceProvider</className>
+      <methodName>anonymous function</methodName>
+      <methodSignature>anonymous function($sql, $bindings, $time)</methodSignature>
+      <fullMethod>anonymous function($sql, $bindings, $time)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>AppServiceProvider</className>
+      <methodName>register</methodName>
+      <methodSignature>register()</methodSignature>
+      <fullMethod>register()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>EventServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(DispatcherContract $events)</methodSignature>
+      <fullMethod>boot(DispatcherContract $events)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>RouteServiceProvider</className>
+      <methodName>boot</methodName>
+      <methodSignature>boot(Router $router)</methodSignature>
+      <fullMethod>boot(Router $router)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>RouteServiceProvider</className>
+      <methodName>map</methodName>
+      <methodSignature>map(Router $router)</methodSignature>
+      <fullMethod>map(Router $router)</fullMethod>
+      <crap>1</crap>
+      <complexity>1</complexity>
+      <coverage>100</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Providers</package>
+      <className>RouteServiceProvider</className>
+      <methodName>anonymous function</methodName>
+      <methodSignature>anonymous function ($router)</methodSignature>
+      <fullMethod>anonymous function ($router)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+  </methods>
+</crap_result>

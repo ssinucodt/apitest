@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ControllerTraitCreate.php">
+    <totals>
+      <lines total="29" comments="0" code="29" executable="0" executed="0" percent=""/>
+      <methods count="0" tested="0" percent=""/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="0" tested="1" percent=""/>
+      <traits count="1" tested="0" percent="0.00%"/>
+    </totals>
+    <trait name="ControllerTraitCreate" start="23" executable="0" executed="0" crap="0">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="generic"/>
+    </trait>
+  </file>
+</phpunit>

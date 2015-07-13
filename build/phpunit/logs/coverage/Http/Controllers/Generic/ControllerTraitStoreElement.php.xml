@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
+  <file name="ControllerTraitStoreElement.php">
+    <totals>
+      <lines total="262" comments="47" code="215" executable="145" executed="0" percent="0.00%"/>
+      <methods count="1" tested="0" percent="0.00%"/>
+      <functions count="0" tested="0" percent=""/>
+      <classes count="0" tested="0" percent=""/>
+      <traits count="1" tested="0" percent="0.00%"/>
+    </totals>
+    <trait name="ControllerTraitStoreElement" start="23" executable="145" executed="0" crap="1406">
+      <package full="" name="" sub="" category=""/>
+      <namespace name="generic"/>
+      <method name="storeElement" signature="storeElement($json_object)" start="26" end="261" crap="1406" executable="145" executed="0" coverage="0"/>
+    </trait>
+  </file>
+</phpunit>

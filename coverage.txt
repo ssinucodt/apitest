@@ -1,0 +1,14 @@
+
+
+Code Coverage Report:      
+  2015-07-10 18:17:17      
+                           
+ Summary:                  
+  Classes: 37.93% (11/29)  
+  Methods:  3.45% (1/29)   
+  Lines:   12.18% (118/969)
+
+\App\Http\Controllers\Positions::PositionController
+  Methods:   0.00% ( 0/ 2)   Lines:  83.84% ( 83/ 99)
+\App\Http\Controllers\Users::LoginController
+  Methods:  50.00% ( 1/ 2)   Lines:  94.59% ( 35/ 37)

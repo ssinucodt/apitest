@@ -1,0 +1,61 @@
+***************
+*** 109,132 ****
+                          $operador = $filtro->comparison;
+                          
+                          switch ($operador) {
+-                             case 'eq':
+-                                 $operador = '=';
+-                                 break;
+-                             case 'lt':
+-                                 $operador = '=';
+-                                 break;
+-                             case 'gt':
+-                                 $operador = '=';
+-                                 break;
+-                             case 'lte':
+-                                 $operador = '=';
+-                                 break;
+-                             case 'gte':
+-                                 $operador = '=';
+-                                 break;
+-                             default:
+-                                 $operador = '=';
+-                                 break;
+                          }
+                          
+                          $valor = $filtro->value;
+--- 109,132 ----
+                          $operador = $filtro->comparison;
+                          
+                          switch ($operador) {
++                         case 'eq':
++                             $operador = '=';
++                             break;
++                         case 'lt':
++                             $operador = '=';
++                             break;
++                         case 'gt':
++                             $operador = '=';
++                             break;
++                         case 'lte':
++                             $operador = '=';
++                             break;
++                         case 'gte':
++                             $operador = '=';
++                             break;
++                         default:
++                             $operador = '=';
++                             break;
+                          }
+                          
+                          $valor = $filtro->value;
+***************
+*** 241,244 ****
+          }        
+          return (new Response($resp, $status));
+      }
+- }--- 241,244 ----
+          }        
+          return (new Response($resp, $status));
+      }
++ }

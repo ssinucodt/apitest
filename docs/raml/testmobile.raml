@@ -1,0 +1,188 @@
+#%RAML 0.8
+title: testmobile
+baseUri: http://192.168.1.114/testmobile/public
+version: 1.0.0
+/positions:
+  get:
+    description: Lista, orderna y pagina las posiciones segun las opciones especificadas.
+    headers:
+      X-Session-Token:
+        type: string
+        displayName:  X-Session-Token        
+        description: Token de acceso
+        required: true
+        example: q16d7NHS2b3M8OTgTKqbgBoRKsZahUWqk3tuTujHqjETS6dq
+      X-OS:
+        type: string
+        displayName:  X-OS
+        description: Sistema operativo
+        required: true
+        example: android
+      X-imei:
+        type: string
+        displayName:  X-imei
+        description: IMEI de dispositivo
+        required: true
+        example: ZXKH34V         
+    queryParameters:
+      page:
+          type: integer
+          displayName: page
+          description: Pagina actual
+          required: false
+          example: 1
+      limit:
+          type: integer
+          displayName: limit
+          description: Numero de resultados por pagina
+          required: false
+          example: 10      
+      filters:
+          type: string
+          displayName: filters
+          description: Json indicando los filtros
+          required: false
+          example: |
+            [
+              {
+                "field": "updatetime",
+                "comparison": "gte",
+                "value": "2015-07-07"
+              },
+              {
+                "field": "updatetime",
+                "comparison": "lte",
+                "value": "2015-07-08"
+              }
+            ]
+      sort:
+          type: string
+          displayName: sort
+          description: Json indicando los ordenamientos
+          required: false
+          example: |
+            [
+              {
+                "field": "updatetime",
+                "direction": "ASC"
+              }
+            ]
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "error": false,
+                "msg": "OK",
+                "data": {
+                  "total": 10,
+                  "per_page": 2,
+                  "current_page": 1,
+                  "last_page": 5,
+                  "from": 1,
+                  "to": 2,
+                  "data": [
+                    {
+                      "id_position": 2,
+                      "id_user": 1,
+                      "latitude": "4.712",
+                      "longitude": "-74.454",
+                      "updatetime": "2015-07-07 16:35:00"
+                    },
+                    {
+                      "id_position": 1,
+                      "id_user": 1,
+                      "latitude": "4.712",
+                      "longitude": "-74.454",
+                      "updatetime": "2015-07-07 16:35:00"
+                    }
+                  ]
+                }              
+              }              
+  post:
+    headers:
+      X-Session-Token:
+        type: string
+        displayName:  X-Session-Token        
+        description: Token de acceso
+        required: true
+        example: q16d7NHS2b3M8OTgTKqbgBoRKsZahUWqk3tuTujHqjETS6dq
+      X-OS:
+        type: string
+        displayName:  X-OS
+        description: Sistema operativo
+        required: true
+        example: android
+      X-imei:
+        type: string
+        displayName:  X-imei
+        description: IMEI de dispositivo
+        required: true
+        example: ZXKH34V        
+    queryParameters:
+      values:
+          type: string
+          displayName: values
+          description: Json con la posicion que se debe almacenar
+          required: true
+          example: |
+            {
+              "latitude": 4.712,
+              "longitude": -74.454,
+              "updatetime": "2015-07-07 16:35:00"        
+            }
+    description: Almacena un posicion con la informacion reportada en el json de entrada.
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "error": false,
+                "msg": "OK",
+                "data": {
+                  "id_position": 11
+                }
+              }
+/login:
+  post:
+    headers:
+      X-OS:
+        type: string
+        displayName:  X-OS
+        description: Sistema operativo
+        required: true
+        example: android
+      X-imei:
+        type: string
+        displayName:  X-imei
+        description: IMEI de dispositivo
+        required: true
+        example: ZXKH34V
+    queryParameters:
+      values:
+        type: string
+        displayName: values
+        description: Json con informacion de login y password
+        required: true
+        example: |
+          {
+            "user": "juan",
+            "password": "e10adc3949ba59abbe56e057f20f883e"
+          }
+    description: Verifica el usuario y contraseña dados. Si son correctos genera un access token y un refresh token.
+    responses:
+      200:
+        description: El usuario y contraseña son correctos. Se entrega access token y refresh token.
+        body:
+          application/json:
+            example: |
+              {
+                "error": false,
+                "msg": "OK",
+                "access_token": "uydBWqWX0d55a0SOnp1v8uK0nRKEAChiJl2gh8fpdBD5YOp7",
+                "refresh_token": "ynhRpou9wrJllCfhQvKiverfim3sF0ONCJqAzF7FxnBpYZ5E",
+                "valid_until": null              
+              }
+            
