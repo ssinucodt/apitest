@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="name-of-project" default="build">
+    <!--
+    <property name="phplocdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
+    <property name="phpmddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
+    <property name="phpcsdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
+    <property name="phpcpddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/> 
+    <property name="phpunitdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
+    <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
+    -->
+    
+    <property name="phplocdir" value="/usr/local/bin"/>
+    <property name="phpmddir" value="/usr/local/bin"/>
+    <property name="phpcsdir" value="/usr/local/bin"/>
+    <property name="phpcpddir" value="/usr/local/bin"/> 
+    <property name="phpunitdir" value="/usr/local/bin"/>
+    <property name="phpdocdir" value="/usr/local/bin"/>
+        
+    <target name="build"
+            depends="prepare,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdoc"
+            description=""/>
+
+    <!-- Elimina directorios el build. -->
+    <target name="clean"
+            unless="clean.done"
+            description="Cleanup build artifacts">
+     <delete dir="${basedir}/build/phpcd"/>
+     <delete dir="${basedir}/build/phploc"/>
+     <delete dir="${basedir}/build/phpcs"/>
+     <delete dir="${basedir}/build/phpdoc/parser"/>
+     <delete dir="${basedir}/build/phpmd"/>
+     <delete dir="${basedir}/build/phpunit/logs"/>
+     <delete dir="${basedir}/docs/phpdoc"/>
+     <delete dir="${basedir}/docs/phpunit/coverage"/>
+     <property name="clean.done" value="true"/>
+    </target>
+    
+    <!-- Crea directorios necesarios para el build. -->
+    <target name="prepare"
+            unless="prepare.done"
+            depends="clean"
+            description="Prepare for build">
+     <mkdir dir="${basedir}/build/phpcd"/>
+     <mkdir dir="${basedir}/build/phploc"/>
+     <mkdir dir="${basedir}/build/phpcs"/>
+     <mkdir dir="${basedir}/build/phpdoc/parser"/>
+     <mkdir dir="${basedir}/build/phpmd"/>
+     <mkdir dir="${basedir}/build/phpunit/logs"/>
+     <mkdir dir="${basedir}/docs/phpdoc"/>
+     <mkdir dir="${basedir}/docs/phpunit/coverage"/>
+     <property name="prepare.done" value="true"/>
+    </target>
+    
+    <!-- Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment. -->
+    <target name="phploc-ci" unless="phploc.done" depends="prepare" description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
+        <exec executable="${phplocdir}/phploc.bat" taskname="phploc">
+            <arg value="--count-tests"/>
+            <arg value="--log-csv"/>
+            <arg path="${basedir}/build/phploc/report.csv"/>
+            <arg value="--log-xml"/>
+            <arg path="${basedir}/build/phploc/report.xml"/>
+            <arg path="${basedir}/app"/>
+            <arg path="${basedir}/tests"/>
+        </exec>
+        <property name="phploc.done" value="true"/>
+    </target>  
+
+    <!-- Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment. -->
+    <target name="phpmd-ci"
+            unless="phpmd.done"
+            depends="prepare"
+            description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
+       <exec executable="${phpmddir}/phpmd.bat" taskname="phpmd">
+           <!-- Analizar el directorio app/ -->
+           <arg value="${basedir}/app" />
+           <!-- Reporte en formato XML -->
+           <arg value="xml" />
+           <!-- Todos los rulesets -->
+           <arg value="cleancode,codesize,controversial,design,naming,unusedcode" />
+           <!-- Archivo de informe en build/phpmd/report_phpmd.xml -->
+           <arg value="--reportfile" />
+           <arg value="${basedir}/build/phpmd/report.xml" />
+       </exec>
+
+       <property name="phpmd.done" value="true"/>
+    </target>
+
+    <!-- Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment. -->
+    <target name="phpcs-ci" unless="phpcs.done" depends="prepare" description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
+       <exec executable="${phpcsdir}/phpcs.bat" taskname="phpcs">
+           <!-- Ignorar warnings -->
+           <arg value="-n"/>
+           <!-- Estandar PSR2 -->
+           <arg value="--standard=PSR2"/>
+           <!-- Unicamente procesar  .php -->
+           <arg value="--extensions=php"/>
+           <!-- Ignorar archivos -->
+           <arg value="--ignore=app/Console/Kernel.php,app/Http/Controllers/Generic/*,app/Http/Controllers/Controller.php,app/http/Middleware/*,app/Http/Requests/Request.php,app/Http/Kernel.php,app/Http/routes.php,app/Http/Jobs/Job.php,app/Http/Providers/*"/>
+           <!-- Reporte checkstyle -->
+           <arg value="--report-checkstyle=build/phpcs/checkstyle.xml"/>
+           <!-- Reporte gitblame -->
+           <arg value="--report-gitblame=build/phpcs/gitblame.txt"/>
+           <!-- Detalle en el reporte de gitblame --> 
+           <arg value="-s"/>
+           <!-- Enconding utf-8 -->
+           <arg value="--encoding=utf-8"/>
+           <!-- Analizar el directorio app/ -->
+           <arg value="app/"/>
+       </exec>
+       <property name="phpcs.done" value="true"/>
+    </target>
+    
+    <!-- Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment. -->
+    <target name="phpcpd-ci" unless="phpcpd.done" depends="prepare" description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
+        <exec executable="${phpcpddir}/phpcpd.bat" taskname="phpcpd">
+            <arg value="--log-pmd"/>
+            <arg path="${basedir}/build/phpcpd/report.xml"/>
+            <arg path="${basedir}/app"/>
+        </exec>
+        <property name="phpcpd.done" value="true"/>
+    </target>
+    
+    <!-- Run unit tests with PHPUnit -->
+    <target name="phpunit" unless="phpunit.done" depends="prepare" description="Run unit tests with PHPUnit">
+        <exec executable="${phpunitdir}/phpunit.bat" failonerror="true" taskname="phpunit">
+            <!-- Archivo de configuracion en build/phpunit/phpunit.xml -->
+            <arg value="--configuration"/>
+            <arg path="${basedir}/build/phpunit/phpunit.xml"/>
+        </exec>
+        <property name="phpunit.done" value="true"/>
+    </target>
+    
+    <!-- Generate project documentation using phpDoc -->
+    <target name="phpdoc" unless="phpdoc.done" depends="prepare" description="Generate project documentation using phpDoc">
+        <exec executable="${phpdocdir}/phpdoc.bat" dir="${basedir}/build" taskname="phpdox">
+            <arg value="--config"/>
+            <arg path="${basedir}/build/phpdoc/phpdoc.xml"/>
+        </exec>
+        <property name="phpdoc.done" value="true"/>
+    </target>          
+</project>
+
