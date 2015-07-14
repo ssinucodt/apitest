@@ -8,6 +8,7 @@
     <property name="phpunitdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
     <property name="extensionexe" value=".bat"/>
+    
     -->
     
     <property name="phplocdir" value="/usr/local/bin"/>
@@ -18,8 +19,9 @@
     <property name="phpdocdir" value="/usr/local/bin"/>    
     <property name="extensionexe" value=""/>
     
+    
     <target name="build"
-            depends="prepare,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdoc"
+            depends="prepare,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci,phpdoc"
             description=""/>
 
     <!-- Elimina directorios el build. -->
