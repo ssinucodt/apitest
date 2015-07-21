@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
-<!--    
+    <!--
     <property name="phpdir" value="C:/php-5.6.10"/>
     <property name="phplocdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpmddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
@@ -8,8 +8,9 @@
     <property name="phpcpddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/> 
     <property name="phpunitdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
+    <property name="jsduckdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="extensionexe" value=".bat"/>
--->
+    -->
    
     <property name="phpdir" value="/usr/bin"/>    
     <property name="phplocdir" value="/usr/local/bin"/>
@@ -18,11 +19,11 @@
     <property name="phpcpddir" value="/usr/local/bin"/> 
     <property name="phpunitdir" value="/usr/local/bin"/>
     <property name="phpdocdir" value="/usr/local/bin"/>    
+    <property name="jsduckdir" value="/usr/local/bin"/>
     <property name="extensionexe" value=""/>
     
-    
     <target name="build"
-            depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc"
+            depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc,jsduck"
             description=""/>
 
     <!-- Elimina directorios el build. -->
@@ -165,5 +166,15 @@
             <arg path="${basedir}/build/phpdoc/phpdoc.xml"/>
         </exec>
         <property name="phpdoc.done" value="true"/>
-    </target>          
+    </target> 
+    
+    <!-- Generate project documentation using jsduck -->
+    <target name="jsduck" unless="jsduck.done" depends="prepare" description="Generate project documentation using jsduck">
+        <exec executable="${jsduckdir}/jsduck" taskname="jsduck">
+            <arg value="${basedir}/public/"/>
+            <arg value="--output"/>
+            <arg path="${basedir}/docs/js"/>
+        </exec>
+        <property name="jsduck.done" value="true"/>
+    </target>                      
 </project>
