@@ -22,7 +22,7 @@
     
     
     <target name="build"
-            depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpdoc"
+            depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc"
             description=""/>
 
     <!-- Elimina directorios el build. -->
