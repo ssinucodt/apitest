@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
-    <!--
+    
     <property name="phpdir" value="C:/php-5.6.10"/>
     <property name="phplocdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpmddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
@@ -9,9 +9,11 @@
     <property name="phpunitdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
     <property name="jsduckdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
+    <property name="jshintdir" value="C:/Users/Desarrollo/AppData/Roaming/npm"/>
+    <property name="jsldir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="extensionexe" value=".bat"/>
-    -->
-   
+    
+   <!--
     <property name="phpdir" value="/usr/bin"/>    
     <property name="phplocdir" value="/usr/local/bin"/>
     <property name="phpmddir" value="/usr/local/bin"/>
@@ -20,10 +22,13 @@
     <property name="phpunitdir" value="/usr/local/bin"/>
     <property name="phpdocdir" value="/usr/local/bin"/>    
     <property name="jsduckdir" value="/usr/local/bin"/>
+    <property name="jshintdir" value="/usr/local/bin"/>
+    <property name="jsldir" value="/usr/local/bin"/>
     <property name="extensionexe" value=""/>
+    -->
     
     <target name="build"
-            depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc,jsduck"
+            depends="prepare,phploc-ci,phploc-html,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc,jsduck-ci,jshint-ci"
             description=""/>
 
     <!-- Elimina directorios el build. -->
@@ -38,6 +43,9 @@
      <delete dir="${basedir}/build/phpunit/logs"/>
      <delete dir="${basedir}/docs/phpdoc"/>
      <delete dir="${basedir}/docs/phpunit/coverage"/>
+     <delete dir="${basedir}/build/jsl/logs"/>
+     <delete dir="${basedir}/build/jshint"/>
+     <delete dir="${basedir}/docs/js"/>
      <property name="clean.done" value="true"/>
     </target>
     
@@ -54,6 +62,9 @@
      <mkdir dir="${basedir}/build/phpunit/logs"/>
      <mkdir dir="${basedir}/docs/phpdoc"/>
      <mkdir dir="${basedir}/docs/phpunit/coverage"/>
+     <mkdir dir="${basedir}/build/jsl/logs"/>
+     <mkdir dir="${basedir}/build/jshint"/>
+     <mkdir dir="${basedir}/docs/js"/>
 
      <chmod file="${basedir}/bootstrap/cache/**" perm="770" type="both"/>
      <chmod file="${basedir}/storage/**" perm="770" type="both"/>
@@ -83,26 +94,6 @@
 	    <redirector output="${basedir}/build/phploc/index.html" alwayslog="false"/> 
         </exec>
         <property name="phplochtml.done" value="true"/>
-    </target> 
-
-    <!-- Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment. -->
-    <target name="phpmd-ci"
-            unless="phpmd.done"
-            depends="prepare"
-            description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
-       <exec executable="${phpmddir}/phpmd${extensionexe}" taskname="phpmd">
-           <!-- Analizar el directorio app/ -->
-           <arg value="${basedir}/app" />
-           <!-- Reporte en formato XML -->
-           <arg value="xml" />
-           <!-- Todos los rulesets -->
-           <arg value="cleancode,codesize,controversial,design,naming,unusedcode" />
-           <!-- Archivo de informe en build/phpmd/report_phpmd.xml -->
-           <arg value="--reportfile" />
-           <arg value="${basedir}/build/phpmd/report.xml" />
-       </exec>
-
-       <property name="phpmd.done" value="true"/>
     </target>
 
     <!-- Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment. -->
@@ -169,12 +160,22 @@
     </target> 
     
     <!-- Generate project documentation using jsduck -->
-    <target name="jsduck" unless="jsduck.done" depends="prepare" description="Generate project documentation using jsduck">
+    <target name="jsduck-ci" unless="jsduck.done" depends="prepare" description="Generate project documentation using jsduck">
         <exec executable="${jsduckdir}/jsduck" taskname="jsduck">
             <arg value="${basedir}/public/"/>
             <arg value="--output"/>
             <arg path="${basedir}/docs/js"/>
         </exec>
         <property name="jsduck.done" value="true"/>
-    </target>                      
+    </target>   
+    
+    <!-- Generate jshint report -->
+    <target name="jshint-ci" unless="jshint.done" depends="prepare" description="Generate jshint report">
+        <exec executable="${jshintdir}/jshint" taskname="jsduck">
+            <arg value="--reporter=checkstyle"/>
+            <arg value="${basedir}/public/app"/>
+            <redirector output="${basedir}/build/jshint/checkstyle.xml" alwayslog="false"/> 
+        </exec>
+        <property name="jshint.done" value="true"/>
+    </target>                                                                                      
 </project>
