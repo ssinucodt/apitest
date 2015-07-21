@@ -1,5 +1,5 @@
 <?php
-$xml = new SimpleXMLElement('report.xml'.$_GET["callsign"], 0, TRUE);
+$xml = new SimpleXMLElement(dirname(__FILE__).'/logs/report.xml', 0, TRUE);
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
