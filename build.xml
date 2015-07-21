@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
-    
+<!--    
     <property name="phpdir" value="C:/php-5.6.10"/>
     <property name="phplocdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpmddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
@@ -9,8 +9,8 @@
     <property name="phpunitdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
     <property name="extensionexe" value=".bat"/>
-    
-    <!--
+-->
+   
     <property name="phpdir" value="/usr/bin"/>    
     <property name="phplocdir" value="/usr/local/bin"/>
     <property name="phpmddir" value="/usr/local/bin"/>
@@ -19,7 +19,7 @@
     <property name="phpunitdir" value="/usr/local/bin"/>
     <property name="phpdocdir" value="/usr/local/bin"/>    
     <property name="extensionexe" value=""/>
-    -->
+    
     
     <target name="build"
             depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpdoc"
@@ -53,6 +53,11 @@
      <mkdir dir="${basedir}/build/phpunit/logs"/>
      <mkdir dir="${basedir}/docs/phpdoc"/>
      <mkdir dir="${basedir}/docs/phpunit/coverage"/>
+
+     <chmod file="${basedir}/bootstrap/cache/**" perm="770" type="both"/>
+     <chmod file="${basedir}/storage/**" perm="770" type="both"/>
+
+     <touch file="${basedir}/storage/logs/laravel.log"/>
      <property name="prepare.done" value="true"/>
     </target>
     
@@ -72,7 +77,7 @@
 
     <!-- Transform the XML PHPLOC REPORT into a HTML table. -->
     <target name="phploc-html" unless="phplochtml.done" depends="phploc-ci" description="Transform the XML PHPLOC REPORT into a HTML table.">
-        <exec executable="${phpdir}/php.exe" taskname="php">
+        <exec executable="${phpdir}/php" taskname="php">
             <arg value="${basedir}/build/phploc/report.php"/>
 	    <redirector output="${basedir}/build/phploc/index.html" alwayslog="false"/> 
         </exec>
@@ -126,7 +131,7 @@
     
     <!-- Transform the GIT BLAME REPORT into a HTML table. -->
     <target name="phpcs-html" unless="phpcshtml.done" depends="phpcs-ci" description="Transform the GIT BLAME REPORT into a HTML table.">
-        <exec executable="${phpdir}/php.exe" taskname="php">
+        <exec executable="${phpdir}/php" taskname="php">
             <arg value="${basedir}/build/phpcs/report.php"/>
 	    <redirector output="${basedir}/build/phpcs/index.html" alwayslog="false"/> 
         </exec>
@@ -162,4 +167,3 @@
         <property name="phpdoc.done" value="true"/>
     </target>          
 </project>
-
