@@ -1,27 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <crap_result>
   <project/>
-  <timestamp>2015-07-11 01:34:07</timestamp>
+  <timestamp>2015-07-15 01:22:25</timestamp>
   <stats>
     <name>Method Crap Stats</name>
-    <methodCount>31</methodCount>
-    <crapMethodCount>9</crapMethodCount>
-    <crapLoad>208</crapLoad>
-    <totalCrap>9654.12</totalCrap>
-    <crapMethodPercent>29.03</crapMethodPercent>
+    <methodCount>26</methodCount>
+    <crapMethodCount>0</crapMethodCount>
+    <crapLoad>0</crapLoad>
+    <totalCrap>102.06</totalCrap>
+    <crapMethodPercent>0</crapMethodPercent>
   </stats>
   <methods>
-    <method>
-      <package>App\Console\Commands</package>
-      <className>Inspire</className>
-      <methodName>handle</methodName>
-      <methodSignature>handle()</methodSignature>
-      <fullMethod>handle()</fullMethod>
-      <crap>2</crap>
-      <complexity>1</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
     <method>
       <package>App\Console</package>
       <className>Kernel</className>
@@ -56,137 +45,14 @@
       <crapLoad>0</crapLoad>
     </method>
     <method>
-      <package>generic</package>
-      <className>ControllerTraitCreateMovil</className>
-      <methodName>storeMovil</methodName>
-      <methodSignature>storeMovil($obj)</methodSignature>
-      <fullMethod>storeMovil($obj)</fullMethod>
-      <crap>110</crap>
-      <complexity>10</complexity>
-      <coverage>0</coverage>
-      <crapLoad>10</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitDestroy</className>
-      <methodName>destroy</methodName>
-      <methodSignature>destroy()</methodSignature>
-      <fullMethod>destroy()</fullMethod>
-      <crap>90</crap>
-      <complexity>9</complexity>
-      <coverage>0</coverage>
-      <crapLoad>9</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitDestroy</className>
-      <methodName>privateDestroy</methodName>
-      <methodSignature>privateDestroy(Array $aborrar)</methodSignature>
-      <fullMethod>privateDestroy(Array $aborrar)</fullMethod>
-      <crap>210</crap>
-      <complexity>14</complexity>
-      <coverage>0</coverage>
-      <crapLoad>14</crapLoad>
-    </method>
-    <method>
-      <package>App\Http\Controllers\Generic</package>
-      <className>ControllerTraitIndex</className>
-      <methodName>index</methodName>
-      <methodSignature>index()</methodSignature>
-      <fullMethod>index()</fullMethod>
-      <crap>110</crap>
-      <complexity>10</complexity>
-      <coverage>0</coverage>
-      <crapLoad>10</crapLoad>
-    </method>
-    <method>
-      <package>App\Http\Controllers\Generic</package>
-      <className>ControllerTraitIndex</className>
-      <methodName>privateIndex</methodName>
-      <methodSignature>privateIndex($limit=null, $sort=null, $filters=null, $withs=null, $resp=null)</methodSignature>
-      <fullMethod>privateIndex($limit=null, $sort=null, $filters=null, $withs=null, $resp=null)</fullMethod>
-      <crap>6972</crap>
-      <complexity>83</complexity>
-      <coverage>0</coverage>
-      <crapLoad>86</crapLoad>
-    </method>
-    <method>
-      <package>App\Http\Controllers\Generic</package>
-      <className>ControllerTraitIndex</className>
-      <methodName>anonymous function</methodName>
-      <methodSignature>anonymous function ($qy) use($fil)</methodSignature>
-      <fullMethod>anonymous function ($qy) use($fil)</fullMethod>
-      <crap>6</crap>
-      <complexity>2</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitStore</className>
-      <methodName>store</methodName>
-      <methodSignature>store()</methodSignature>
-      <fullMethod>store()</fullMethod>
-      <crap>6</crap>
-      <complexity>2</complexity>
-      <coverage>0</coverage>
-      <crapLoad>0</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitStoreElement</className>
-      <methodName>storeElement</methodName>
-      <methodSignature>storeElement($json_object)</methodSignature>
-      <fullMethod>storeElement($json_object)</fullMethod>
-      <crap>1406</crap>
-      <complexity>37</complexity>
-      <coverage>0</coverage>
-      <crapLoad>38</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitUpdate</className>
-      <methodName>update</methodName>
-      <methodSignature>update()</methodSignature>
-      <fullMethod>update()</fullMethod>
-      <crap>506</crap>
-      <complexity>22</complexity>
-      <coverage>0</coverage>
-      <crapLoad>23</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitUpdate</className>
-      <methodName>privateUpdate</methodName>
-      <methodSignature>privateUpdate(Array $ref, $basicinf = null, $relaciones = null, $ismasive = false, &#13;
-		$idUserSession)</methodSignature>
-      <fullMethod>privateUpdate(Array $ref, $basicinf = null, $relaciones = null, $ismasive = false, &#13;
-		$idUserSession)</fullMethod>
-      <crap>132</crap>
-      <complexity>11</complexity>
-      <coverage>0</coverage>
-      <crapLoad>11</crapLoad>
-    </method>
-    <method>
-      <package>generic</package>
-      <className>ControllerTraitVerify</className>
-      <methodName>verifyModel</methodName>
-      <methodSignature>verifyModel()</methodSignature>
-      <fullMethod>verifyModel()</fullMethod>
-      <crap>30</crap>
-      <complexity>5</complexity>
-      <coverage>0</coverage>
-      <crapLoad>5</crapLoad>
-    </method>
-    <method>
       <package>App\Http\Controllers\Positions</package>
       <className>PositionController</className>
       <methodName>index</methodName>
       <methodSignature>index(Request $request)</methodSignature>
       <fullMethod>index(Request $request)</fullMethod>
-      <crap>18.05</crap>
+      <crap>16.75</crap>
       <complexity>16</complexity>
-      <coverage>80</coverage>
+      <coverage>85.71</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -195,9 +61,9 @@
       <methodName>store</methodName>
       <methodSignature>store(Request $request)</methodSignature>
       <fullMethod>store(Request $request)</fullMethod>
-      <crap>8.06</crap>
+      <crap>23.3</crap>
       <complexity>8</complexity>
-      <coverage>90</coverage>
+      <coverage>37.93</coverage>
       <crapLoad>0</crapLoad>
     </method>
     <method>
@@ -228,6 +94,72 @@
       <methodName>index</methodName>
       <methodSignature>index()</methodSignature>
       <fullMethod>index()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>store</methodName>
+      <methodSignature>store()</methodSignature>
+      <fullMethod>store()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>create</methodName>
+      <methodSignature>create()</methodSignature>
+      <fullMethod>create()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>show</methodName>
+      <methodSignature>show()</methodSignature>
+      <fullMethod>show()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>edit</methodName>
+      <methodSignature>edit()</methodSignature>
+      <fullMethod>edit()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>update</methodName>
+      <methodSignature>update()</methodSignature>
+      <fullMethod>update()</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Http\Controllers\Users</package>
+      <className>UserController</className>
+      <methodName>destroy</methodName>
+      <methodSignature>destroy()</methodSignature>
+      <fullMethod>destroy()</fullMethod>
       <crap>2</crap>
       <complexity>1</complexity>
       <coverage>0</coverage>
@@ -274,6 +206,17 @@
       <fullMethod>handle($request, Closure $next)</fullMethod>
       <crap>6</crap>
       <complexity>2</complexity>
+      <coverage>0</coverage>
+      <crapLoad>0</crapLoad>
+    </method>
+    <method>
+      <package>App\Models\Users</package>
+      <className>User</className>
+      <methodName>getNestorAttribute</methodName>
+      <methodSignature>getNestorAttribute($value)</methodSignature>
+      <fullMethod>getNestorAttribute($value)</fullMethod>
+      <crap>2</crap>
+      <complexity>1</complexity>
       <coverage>0</coverage>
       <crapLoad>0</crapLoad>
     </method>

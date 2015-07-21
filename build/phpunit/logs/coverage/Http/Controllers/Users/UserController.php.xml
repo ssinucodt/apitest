@@ -2,16 +2,22 @@
 <phpunit xmlns="http://schema.phpunit.de/coverage/1.0">
   <file name="UserController.php">
     <totals>
-      <lines total="50" comments="34" code="16" executable="5" executed="0" percent="0.00%"/>
-      <methods count="1" tested="0" percent="0.00%"/>
+      <lines total="99" comments="34" code="65" executable="35" executed="0" percent="0.00%"/>
+      <methods count="7" tested="0" percent="0.00%"/>
       <functions count="0" tested="0" percent=""/>
       <classes count="1" tested="0" percent="0.00%"/>
       <traits count="0" tested="0" percent=""/>
     </totals>
-    <class name="UserController" start="42" executable="5" executed="0" crap="2">
+    <class name="UserController" start="43" executable="35" executed="0" crap="56">
       <package full="" name="" sub="" category=""/>
       <namespace name="App\Http\Controllers\Users"/>
-      <method name="index" signature="index()" start="44" end="50" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="index" signature="index()" start="45" end="51" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="store" signature="store()" start="53" end="59" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="create" signature="create()" start="61" end="67" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="show" signature="show()" start="69" end="75" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="edit" signature="edit()" start="77" end="83" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="update" signature="update()" start="85" end="91" crap="2" executable="5" executed="0" coverage="0"/>
+      <method name="destroy" signature="destroy()" start="93" end="99" crap="2" executable="5" executed="0" coverage="0"/>
     </class>
   </file>
 </phpunit>
