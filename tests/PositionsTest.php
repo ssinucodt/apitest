@@ -65,12 +65,12 @@ class PositionsTest extends TestCase{
             {
               "field": "updatetime",
               "comparison": "gte",
-              "value": "2015-07-07"
+              "value": "2015-07-01"
             },
             {
               "field": "updatetime",
               "comparison": "lte",
-              "value": "2015-07-08"
+              "value": "2015-07-31"
             }
           ]';        
         $sort = '[
@@ -141,11 +141,11 @@ class PositionsTest extends TestCase{
           "longitude": -74.454,
           "updatetime": "2015-07-07 16:35:00"
         }';
-        $parameters = ['values'=>$str];
+        $parameters = [];
         $cookies = [];
         $files = [];
         $server = [];
-        $content = null;
+        $content = $str;
         
         $request = Request::create(
             $uri, $method, $parameters,
@@ -167,6 +167,8 @@ class PositionsTest extends TestCase{
         
         //Content
         $obj = json_decode($response->getContent());
+        
+        var_dump($this->access_token);
         
         //Assets
         $this->assertFalse($obj->error);
