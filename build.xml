@@ -10,7 +10,6 @@
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
     <property name="jsduckdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="jshintdir" value="C:/Users/Desarrollo/AppData/Roaming/npm"/>
-    <property name="jsldir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="extensionexe" value=".bat"/>
     -->
    
@@ -23,7 +22,6 @@
     <property name="phpdocdir" value="/usr/local/bin"/>    
     <property name="jsduckdir" value="/usr/local/bin"/>
     <property name="jshintdir" value="/usr/local/bin"/>
-    <property name="jsldir" value="/usr/local/bin"/>
     <property name="extensionexe" value=""/>
     
     
@@ -43,7 +41,6 @@
      <delete dir="${basedir}/build/phpunit/logs"/>
      <delete dir="${basedir}/docs/phpdoc"/>
      <delete dir="${basedir}/docs/phpunit/coverage"/>
-     <delete dir="${basedir}/build/jsl/logs"/>
      <delete dir="${basedir}/build/jshint"/>
      <delete dir="${basedir}/docs/js"/>
      <property name="clean.done" value="true"/>
@@ -62,7 +59,6 @@
      <mkdir dir="${basedir}/build/phpunit/logs"/>
      <mkdir dir="${basedir}/docs/phpdoc"/>
      <mkdir dir="${basedir}/docs/phpunit/coverage"/>
-     <mkdir dir="${basedir}/build/jsl/logs"/>
      <mkdir dir="${basedir}/build/jshint"/>
      <mkdir dir="${basedir}/docs/js"/>
 
@@ -171,7 +167,7 @@
     
     <!-- Generate jshint report -->
     <target name="jshint-ci" unless="jshint.done" depends="prepare" description="Generate jshint report">
-        <exec executable="${jshintdir}/jshint" taskname="jsduck">
+        <exec executable="${jshintdir}/jshint" taskname="jshint">
             <arg value="--reporter=checkstyle"/>
             <arg value="${basedir}/public/app"/>
             <redirector output="${basedir}/build/jshint/checkstyle.xml" alwayslog="false"/> 
