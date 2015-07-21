@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="name-of-project" default="build">
-    <!--
+    
+    <property name="phpdir" value="C:/php-5.6.10"/>
     <property name="phplocdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpmddir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
     <property name="phpcsdir" value="C:/Users/Desarrollo/AppData/Roaming/Composer/vendor/bin"/>
@@ -9,8 +10,8 @@
     <property name="phpdocdir" value="C:/phpDocumentor-2.8.1/bin"/>
     <property name="extensionexe" value=".bat"/>
     
-    -->
-    
+    <!--
+    <property name="phpdir" value="/usr/bin"/>    
     <property name="phplocdir" value="/usr/local/bin"/>
     <property name="phpmddir" value="/usr/local/bin"/>
     <property name="phpcsdir" value="/usr/local/bin"/>
@@ -18,10 +19,10 @@
     <property name="phpunitdir" value="/usr/local/bin"/>
     <property name="phpdocdir" value="/usr/local/bin"/>    
     <property name="extensionexe" value=""/>
-    
+    -->
     
     <target name="build"
-            depends="prepare,phploc-ci,phpmd-ci,phpcs-ci,phpcpd-ci,phpdoc"
+            depends="prepare,phploc-ci,phploc-html,phpmd-ci,phpcs-ci,phpcs-html,phpcpd-ci,phpdoc"
             description=""/>
 
     <!-- Elimina directorios el build. -->
@@ -29,8 +30,8 @@
             unless="clean.done"
             description="Cleanup build artifacts">
      <delete dir="${basedir}/build/phpcd"/>
-     <delete dir="${basedir}/build/phploc"/>
-     <delete dir="${basedir}/build/phpcs"/>
+     <delete dir="${basedir}/build/phploc/logs"/>
+     <delete dir="${basedir}/build/phpcs/logs"/>
      <delete dir="${basedir}/build/phpdoc/parser"/>
      <delete dir="${basedir}/build/phpmd"/>
      <delete dir="${basedir}/build/phpunit/logs"/>
@@ -45,8 +46,8 @@
             depends="clean"
             description="Prepare for build">
      <mkdir dir="${basedir}/build/phpcd"/>
-     <mkdir dir="${basedir}/build/phploc"/>
-     <mkdir dir="${basedir}/build/phpcs"/>
+     <mkdir dir="${basedir}/build/phploc/logs"/>
+     <mkdir dir="${basedir}/build/phpcs/logs"/>
      <mkdir dir="${basedir}/build/phpdoc/parser"/>
      <mkdir dir="${basedir}/build/phpmd"/>
      <mkdir dir="${basedir}/build/phpunit/logs"/>
@@ -60,14 +61,23 @@
         <exec executable="${phplocdir}/phploc${extensionexe}" taskname="phploc">
             <arg value="--count-tests"/>
             <arg value="--log-csv"/>
-            <arg path="${basedir}/build/phploc/report.csv"/>
+            <arg path="${basedir}/build/phploc/logs/report.csv"/>
             <arg value="--log-xml"/>
-            <arg path="${basedir}/build/phploc/report.xml"/>
+            <arg path="${basedir}/build/phploc/logs/report.xml"/>
             <arg path="${basedir}/app"/>
             <arg path="${basedir}/tests"/>
         </exec>
         <property name="phploc.done" value="true"/>
     </target>  
+
+    <!-- Transform the XML PHPLOC REPORT into a HTML table. -->
+    <target name="phploc-html" unless="phplochtml.done" depends="phploc-ci" description="Transform the XML PHPLOC REPORT into a HTML table.">
+        <exec executable="${phpdir}/php.exe" taskname="php">
+            <arg value="${basedir}/build/phploc/report.php"/>
+	    <redirector output="${basedir}/build/phploc/index.html" alwayslog="false"/> 
+        </exec>
+        <property name="phplochtml.done" value="true"/>
+    </target> 
 
     <!-- Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment. -->
     <target name="phpmd-ci"
@@ -101,9 +111,9 @@
            <!-- Ignorar archivos -->
            <arg value="--ignore=app/Console/Kernel.php,app/Http/Controllers/Generic/*,app/Http/Controllers/Controller.php,app/http/Middleware/*,app/Http/Requests/Request.php,app/Http/Kernel.php,app/Http/routes.php,app/Http/Jobs/Job.php,app/Http/Providers/*"/>
            <!-- Reporte checkstyle -->
-           <arg value="--report-checkstyle=build/phpcs/checkstyle.xml"/>
+           <arg value="--report-checkstyle=build/phpcs/logs/checkstyle.xml"/>
            <!-- Reporte gitblame -->
-           <arg value="--report-gitblame=build/phpcs/gitblame.txt"/>
+           <arg value="--report-gitblame=build/phpcs/logs/gitblame.txt"/>
            <!-- Detalle en el reporte de gitblame --> 
            <arg value="-s"/>
            <!-- Enconding utf-8 -->
@@ -114,6 +124,15 @@
        <property name="phpcs.done" value="true"/>
     </target>
     
+    <!-- Transform the GIT BLAME REPORT into a HTML table. -->
+    <target name="phpcs-html" unless="phpcshtml.done" depends="phpcs-ci" description="Transform the GIT BLAME REPORT into a HTML table.">
+        <exec executable="${phpdir}/php.exe" taskname="php">
+            <arg value="${basedir}/build/phpcs/report.php"/>
+	    <redirector output="${basedir}/build/phpcs/index.html" alwayslog="false"/> 
+        </exec>
+        <property name="phpcshtml.done" value="true"/>
+    </target>
+        
     <!-- Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment. -->
     <target name="phpcpd-ci" unless="phpcpd.done" depends="prepare" description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
         <exec executable="${phpcpddir}/phpcpd${extensionexe}" taskname="phpcpd">
@@ -136,7 +155,7 @@
     
     <!-- Generate project documentation using phpDoc -->
     <target name="phpdoc" unless="phpdoc.done" depends="prepare" description="Generate project documentation using phpDoc">
-        <exec executable="${phpdocdir}/phpdoc${extensionexe}" dir="${basedir}/build" taskname="phpdox">
+        <exec executable="${phpdocdir}/phpdoc${extensionexe}" dir="${basedir}/build" taskname="phpdoc">
             <arg value="--config"/>
             <arg path="${basedir}/build/phpdoc/phpdoc.xml"/>
         </exec>
