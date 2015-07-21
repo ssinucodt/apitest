@@ -1,0 +1,26 @@
+
+PHP CODE SNIFFER GIT BLAME SUMMARY
+----------------------------------------------------------------------
+AUTHOR   SOURCE                           (Author %) (Overall %) COUNT
+----------------------------------------------------------------------
+Not Committed Yet                             (6.22)     (64.81)    35
+         Squiz.WhiteSpace.SuperfluousWhitespace.EndLine             17
+         Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma    6
+         Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword    4
+         Generic.Files.LineEndings.InvalidEOLChar                    3
+         Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace    2
+         Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis    2
+         Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine    1
+Desarrollo                                    (7.22)     (35.19)    19
+         Squiz.WhiteSpace.SuperfluousWhitespace.EndLine             14
+         PSR2.Files.EndFileNewline.NoneFound                         2
+         Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction    1
+         PSR2.Classes.ClassDeclaration.OpenBraceNewLine              1
+         PSR2.Files.EndFileNewline.TooMany                           1
+----------------------------------------------------------------------
+A TOTAL OF 54 SNIFF VIOLATIONS WERE COMMITTED BY 2 AUTHORS
+----------------------------------------------------------------------
+PHPCBF CAN FIX 54 OF THESE SNIFF VIOLATIONS AUTOMATICALLY
+----------------------------------------------------------------------
+
+

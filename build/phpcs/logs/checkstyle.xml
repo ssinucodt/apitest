@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="2.3.3">
+<file name="C:\xampp\htdocs\testmobile\app\Http\Controllers\Positions\PositionController.php">
+ <error line="1" column="1" severity="error" message="End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;" source="Generic.Files.LineEndings.InvalidEOLChar"/>
+ <error line="102" column="27" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+</file>
+<file name="C:\xampp\htdocs\testmobile\app\Http\Controllers\Users\LoginController.php">
+ <error line="1" column="1" severity="error" message="End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;" source="Generic.Files.LineEndings.InvalidEOLChar"/>
+ <error line="6" column="3" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="27" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="66" column="9" severity="error" message="Expected 1 space after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="66" column="31" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+ <error line="66" column="62" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+ <error line="66" column="74" severity="error" message="Expected 1 space after closing parenthesis; found &quot;// &amp;&amp; !is_null($imei))\n        &quot;" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis"/>
+ <error line="68" column="40" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+ <error line="68" column="44" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+ <error line="68" column="73" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+ <error line="68" column="77" severity="error" message="No space found after comma in function call" source="Generic.Functions.FunctionCallArgumentSpacing.NoSpaceAfterComma"/>
+ <error line="69" column="13" severity="error" message="Expected 1 space after IF keyword; 0 found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="69" column="21" severity="error" message="Expected 1 space after closing parenthesis; found 14" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis"/>
+ <error line="87" column="57" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="89" column="13" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="90" column="13" severity="error" message="Expected 1 space after ELSE keyword; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="95" column="9" severity="error" message="Expected 1 space after closing brace; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace"/>
+ <error line="96" column="9" severity="error" message="Expected 1 space after ELSE keyword; newline found" source="Squiz.ControlStructures.ControlSignature.SpaceAfterKeyword"/>
+ <error line="101" column="47" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="112" column="50" severity="error" message="Opening brace should be on a new line" source="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
+ <error line="119" column="6" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="120" column="1" severity="error" message="Expected 1 newline at end of file; 0 found" source="PSR2.Files.EndFileNewline.NoneFound"/>
+</file>
+<file name="C:\xampp\htdocs\testmobile\app\Http\Controllers\Users\UserController.php">
+ <error line="43" column="41" severity="error" message="Opening brace of a class must be on the line after the definition" source="PSR2.Classes.ClassDeclaration.OpenBraceNewLine"/>
+ <error line="67" column="6" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="75" column="6" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="83" column="6" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="91" column="6" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="99" column="6" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="100" column="1" severity="error" message="Expected 1 newline at end of file; 0 found" source="PSR2.Files.EndFileNewline.NoneFound"/>
+</file>
+<file name="C:\xampp\htdocs\testmobile\app\Models\Positions\Position.php">
+ <error line="1" column="1" severity="error" message="End of line character is invalid; expected &quot;\n&quot; but found &quot;\r\n&quot;" source="Generic.Files.LineEndings.InvalidEOLChar"/>
+ <error line="8" column="3" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="14" column="3" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="24" column="13" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="30" column="13" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="32" column="43" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+</file>
+<file name="C:\xampp\htdocs\testmobile\app\Models\Users\User.php">
+ <error line="9" column="3" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="13" column="3" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="23" column="13" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="24" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="29" column="13" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="30" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="31" column="34" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="36" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+</file>
+<file name="C:\xampp\htdocs\testmobile\app\Models\Users\UserToken.php">
+ <error line="19" column="3" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="29" column="13" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="30" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="35" column="13" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="36" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="37" column="45" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="42" column="8" severity="error" message="Whitespace found at end of line" source="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine"/>
+ <error line="44" column="1" severity="error" message="Expected 1 blank line at end of file; 2 found" source="PSR2.Files.EndFileNewline.TooMany"/>
+</file>
+<file name="C:\xampp\htdocs\testmobile\app\Providers\AppServiceProvider.php">
+ <error line="18" column="20" severity="error" message="Expected 1 space after FUNCTION keyword; 0 found" source="Squiz.Functions.MultiLineFunctionDeclaration.SpaceAfterFunction"/>
+</file>
+</checkstyle>
+
