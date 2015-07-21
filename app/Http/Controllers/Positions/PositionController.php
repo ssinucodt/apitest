@@ -95,8 +95,12 @@ class PositionController extends Controller
         $access_token = $request->header('X-Session-Token');
         $imei = $request->header('X-imei');
         $os = $request->header('X-OS');
-                
+        
+        $resp['msg'] = 'Faltan campos que son obligatorios';
         if (!is_null($imei) && !is_null($os) && !is_null($access_token)) {
+            $resp['msg'] = 'Acess token inválido';
+            $status = 401;            
+            
             $user = UserToken::where('access_token', '=', $access_token)->where('is_valid', '=', true)->where('ts_valid_until', '>=', 'NOW()')->first();
             if ($user) {
                 $posiciones = new Position();
@@ -144,17 +148,15 @@ class PositionController extends Controller
                     }
                 }
                 
+                $page = 1;
                 if ($request->has('page')) {
                     $page = json_decode($request->input('page'), false);
-                } else {
-                    $page = 1;
                 }
                 Input::merge(array('page' => $page));
                 
+                $limit = 2;
                 if ($request->has('limit')) {
                     $limit = json_decode($request->input('limit'), false);
-                } else {
-                    $limit = 2;
                 }
                 
                 $coleccion = $posiciones->paginate($limit);
@@ -163,12 +165,7 @@ class PositionController extends Controller
                 $resp['msg'] = 'OK';
                 $resp['data'] = array();
                 $resp['data'] = $coleccion->toArray();
-            } else {
-                $resp['msg'] = 'Acess token inválido';
-                $status = 401;
             }
-        } else {
-            $resp['msg'] = 'Faltan campos que son obligatorios';
         }
         
         return (new Response($resp, $status));
@@ -211,12 +208,17 @@ class PositionController extends Controller
         $resp['msg'] = 'Ocurrió un error';
         $resp['data'] = null;
         
-        $in = json_decode($request->input('values'), false);
+        //$in = json_decode($request->input('values'), false);
+        $in = json_decode($request->getContent());
         $access_token = $request->header('X-Session-Token');
         $imei = $request->header('X-imei');
         $os = $request->header('X-OS');
         
+        $resp['msg'] = 'Faltan campos que son obligatorios';
         if (property_exists($in, 'latitude') && property_exists($in, 'longitude') && property_exists($in, 'updatetime') && !is_null($imei) && !is_null($os) && !is_null($access_token)) {
+            $resp['msg'] = 'Acess token inválido';
+            $status = 401;
+            
             $user = UserToken::where('access_token', '=', $access_token)->where('is_valid', '=', true)->where('ts_valid_until', '>=', 'NOW()')->first();
             if ($user) {
                 $position = new Position();
@@ -231,12 +233,7 @@ class PositionController extends Controller
                 $resp['msg'] = 'OK';
                 $resp['data'] = array();
                 $resp['data']['id_position'] = $position->id_position;
-            } else {
-                $resp['msg'] = 'Acess token inválido';
-                $status = 401;
             }
-        } else {
-            $resp['msg'] = 'Faltan campos que son obligatorios';
         }
         return (new Response($resp, $status));
     }

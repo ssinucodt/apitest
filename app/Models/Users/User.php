@@ -22,13 +22,13 @@ class User extends Model
      * Nombre de la tabla
      * @var String 
      */    
-    protected $table = 'users.user';
+    protected $table = 'users.user2';
     
     /**
      * Nombre de la columna que representa la llave primaria
      * @var String 
      */    
-    protected $primaryKey = 'id_user';  
+    protected $primaryKey = 'id';  
         
     /**
      * Indica si la tabla tiene las columnas created_at, updated_at y deleted_at

@@ -16,5 +16,9 @@ Route::get('/', function () {
 });
 
 Route::resource('positions', 'Positions\PositionController');
-Route::resource('users', 'Users\UserController');
-Route::post('login', 'Users\LoginController@login');
+
+Route::group(['middleware' => 'cors'], function(){
+    Route::resource('users', 'Users\UserController');
+});
+
+Route::post('login', 'Users\LoginController@login');    

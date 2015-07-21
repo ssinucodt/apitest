@@ -74,7 +74,7 @@ class LoginController extends Controller
                 $userToken = new UserToken();
                 $userToken->access_token = $access_token;
                 $userToken->refresh_token = $refresh_token;
-                $userToken->id_user = $user->id_user;
+                $userToken->id_user = $user->id;
                 $userToken->imei = $imei;
                 $userToken->save();
                 

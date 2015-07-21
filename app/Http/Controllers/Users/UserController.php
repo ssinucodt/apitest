@@ -27,6 +27,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Models\Users\User;
 
 /**
  * A summary informing the user what the associated element does.
@@ -44,8 +45,56 @@ class UserController extends Controller {
     public function index()
     {
         $resp = array();
-        $resp['msg'] = "HOLA MUNDO";
+        $resp['msg'] = "HOLA MUNDO2";
         
         return $resp;
     }
+    
+    public function store()
+    {
+        $resp = array();
+        $resp['msg'] = "HOLA MUNDO2";
+        
+        return $resp;
+    }
+    
+    public function create()
+    {
+        $resp = array();
+        $resp['msg'] = "HOLA MUNDO";
+        
+        return $resp;
+    }  
+    
+    public function show()
+    {
+        $resp = array();
+        $resp['msg'] = "HOLA MUNDO";
+        
+        return $resp;
+    }    
+    
+    public function edit()
+    {
+        $resp = array();
+        $resp['msg'] = "HOLA MUNDO";
+        
+        return $resp;
+    }  
+    
+    public function update()
+    {
+        $resp = array();
+        $resp['msg'] = "HOLA MUNDO";
+        
+        return $resp;
+    }    
+    
+    public function destroy()
+    {
+        $resp = array();
+        $resp['msg'] = "HOLA MUNDO";
+        
+        return $resp;
+    }    
 }
