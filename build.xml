@@ -14,14 +14,14 @@
     -->
    
     <property name="phpdir" value="/usr/bin"/>    
-    <property name="phplocdir" value="/usr/local/bin"/>
-    <property name="phpmddir" value="/usr/local/bin"/>
-    <property name="phpcsdir" value="/usr/local/bin"/>
-    <property name="phpcpddir" value="/usr/local/bin"/> 
-    <property name="phpunitdir" value="/usr/local/bin"/>
-    <property name="phpdocdir" value="/usr/local/bin"/>    
-    <property name="jsduckdir" value="/usr/local/bin"/>
-    <property name="jshintdir" value="/usr/local/bin"/>
+    <property name="phplocdir" value="/root/.composer/vendor/bin/"/>
+    <property name="phpmddir" value="/root/.composer/vendor/bin/"/>
+    <property name="phpcsdir" value="/root/.composer/vendor/bin/"/>
+    <property name="phpcpddir" value="/root/.composer/vendor/bin/"/> 
+    <property name="phpunitdir" value="/root/.composer/vendor/bin/"/>
+    <property name="phpdocdir" value="/root/.composer/vendor/bin/"/>    
+    <property name="jsduckdir" value="/usr/bin"/>
+    <property name="jshintdir" value="/usr/bin"/>
     <property name="extensionexe" value=""/>
     
     
