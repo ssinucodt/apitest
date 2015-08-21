@@ -26,8 +26,10 @@
     
     
     <target name="build"
-            depends="prepare,phploc-ci,phploc-html,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc,jsduck-ci,jshint-ci"
+            depends="build-common,phploc-ci,phploc-html,phpcs-ci,phpcs-html,phpcpd-ci,phpunit,phpdoc,jsduck-ci,jshint-ci"
             description=""/>
+    
+    <target name="build-common" depends="prepare,storage-permissions,bootstrap-permissions" />
 
     <!-- Elimina directorios el build. -->
     <target name="clean"
@@ -68,6 +70,109 @@
      <touch file="${basedir}/storage/logs/laravel.log"/>
      <property name="prepare.done" value="true"/>
     </target>
+        
+    <!-- Concede permisos la carpeta storage -->
+    <target name="storage-permissions" depends="storage-permissions.unix,storage-permissions.windows" description="Setting storage permissions" />
+
+    <!-- LINUX: Concede permisos 777 a la carpeta storage -->
+    <target name="storage-permissions.unix" depends="storage.unix.check" if="storage.unix.exist" description="Setting storage permissions on unix">
+        <echo>Setting app/storage to 777</echo>
+        <chmod file="${basedir}/app/storage/**" perm="777" type="dir" failonerror="false" />
+    </target>
+
+    <!-- WINDOWS: Concede permisos +R a la carpeta storage -->
+    <target name="storage-permissions.windows" depends="storage.windows.check" if="storage.windows.exist" description="Setting storage permissions on windows">
+        <echo>Setting app/storage to writable</echo>
+        <attrib file="${basedir}/app/storage/**" perm="+R" failonerror="false" />
+    </target>
+
+    <!-- LINUX: Verifica si la carpeta ${basedir}/app/storage existe -->
+    <target name="storage.unix.check" description="Check for app/storage on unix">
+        <condition property="storage.unix.exist">
+            <and>
+                <available file="${basedir}/app/storage" type="dir" />
+                <os family="unix" />
+            </and>
+        </condition>
+    </target>
+
+    <!-- WINDOWS: Verifica si la carpeta ${basedir}/app/storage existe -->
+    <target name="storage.windows.check" description="Check for app/storage on windows">
+        <condition property="storage.windows.exist">
+            <and>
+                <available file="${basedir}/app/storage" type="dir" />
+                <os family="windows" />
+            </and>
+        </condition>
+    </target>
+    
+    <!-- Concede permisos la carpeta bootstrap -->
+    <target name="bootstrap-permissions" depends="bootstrap-permissions.unix,bootstrap-permissions.windows" description="Setting bootstrap permissions" />
+
+    <!-- LINUX: Concede permisos 777 a la carpeta bootstrap -->
+    <target name="bootstrap-permissions.unix" depends="bootstrap.unix.check" if="bootstrap.unix.exist" description="Setting bootstrap permissions on unix">
+        <echo>Setting app/bootstrap to 777</echo>
+        <chmod file="${basedir}/app/bootstrap/**" perm="777" type="dir" failonerror="false" />
+    </target>
+
+    <!-- WINDOWS: Concede permisos +R a la carpeta bootstrap -->
+    <target name="bootstrap-permissions.windows" depends="bootstrap.windows.check" if="bootstrap.windows.exist" description="Setting bootstrap permissions on windows">
+        <echo>Setting app/bootstrap to writable</echo>
+        <attrib file="${basedir}/app/bootstrap/**" perm="+R" failonerror="false" />
+    </target>
+
+    <!-- LINUX: Verifica si la carpeta ${basedir}/app/storage existe -->
+    <target name="bootstrap.unix.check" description="Check for app/bootstrap on unix">
+        <condition property="bootstrap.unix.exist">
+            <and>
+                <available file="${basedir}/app/bootstrap" type="dir" />
+                <os family="unix" />
+            </and>
+        </condition>
+    </target>
+
+    <!-- WINDOWS: Verifica si la carpeta ${basedir}/app/bootstrap existe -->
+    <target name="bootstrap.windows.check" description="Check for app/bootstrap on windows">
+        <condition property="bootstrap.windows.exist">
+            <and>
+                <available file="${basedir}/app/bootstrap" type="dir" />
+                <os family="windows" />
+            </and>
+        </condition>
+    </target>    
+    
+    <!-- Elimina el diretorio ${basedir}/vendor -->
+    <target name="clean-composer" description="Cleanup composer artifacts">
+        <echo>Cleaning out the composer artifacts</echo>
+        <delete dir="${basedir}/vendor" />
+        <delete file="${basedir}/composer.lock" />
+    </target>
+    
+    <!-- Instala o actualiza las dependencias -->
+    <target name="composer" depends="composer-install,composer-update" description="Install or update dependencies" />
+
+    <!-- Indica si la carpeta ${basedir}/vendor existe-->
+    <target name="composer.check">
+        <condition property="composer.exist">
+            <available file="${basedir}/vendor" type="dir" />
+        </condition>
+    </target>
+
+    <!-- Instala las dependencias -->
+    <target name="composer-install" depends="composer.check" unless="composer.exist" description="Installing dependencies">
+        <echo>Installing dependencies</echo>
+        <exec executable="composer" failonerror="true">
+            <arg value="install" />
+        </exec>
+    </target>
+    
+    <!-- Actualiza las dependencias -->
+    <target name="composer-update" depends="composer.check" if="composer.exist" description="Updating dependencies">
+        <echo>Updating dependencies</echo>
+        <exec executable="composer" failonerror="true">
+            <arg value="update" />
+        </exec>
+    </target>            
     
     <!-- Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment. -->
     <target name="phploc-ci" unless="phploc.done" depends="prepare" description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
